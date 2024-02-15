@@ -11,7 +11,7 @@ public class Base {
 	public WebDriver driver;
 
 	public void openBrowser() {
-System.getProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver");
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--headless");
 
