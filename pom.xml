@@ -44,10 +44,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>com.codegator.salesforce</groupId>
-			<artifactId>com.codegator.salesforce</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		
 	</dependencies>
 </project>
