@@ -27,29 +27,7 @@
 					</includes>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>net.masterthought</groupId>
-				<artifactId>maven-cucumber-reporting</artifactId>
-				<version>5.3.0</version>
-				<executions>
-					<execution>
-						<id>execution</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-						<configuration>
-							<projectName>Sample-Cucumber-TestNG</projectName>
-							<skip>false</skip>
-							<outputDirectory>reports/html-reports</outputDirectory>
-							<inputDirectory>target/cucumber-reports</inputDirectory>
-							<jsonFiles>
-								<param>**/*.json</param>
-							</jsonFiles>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+			
 		</plugins>
 	</build>
 
@@ -90,12 +68,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.codeborne/phantomjsdriver -->
-		<dependency>
-			<groupId>com.codeborne</groupId>
-			<artifactId>phantomjsdriver</artifactId>
-			<version>1.5.0</version>
-		</dependency>
-
+		
 	</dependencies>
 </project>
