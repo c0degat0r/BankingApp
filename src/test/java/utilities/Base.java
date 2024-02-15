@@ -12,8 +12,9 @@ public class Base {
 	public WebDriver driver;
 
 	public void openBrowser() {
-	
-		WebDriverManager.chromedriver().setup();
+		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+
+				"/drivers/chromedriver");
+//		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
