@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -13,7 +14,11 @@ public class Base {
 
 	public void openBrowser() {
 		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+		
+		ChromeOptions option = new ChromeOptions();
+		option.addArguments("--headless");
+		
+		driver = new ChromeDriver(option);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 	}
