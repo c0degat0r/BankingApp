@@ -40,5 +40,17 @@ public class LoginTest extends Base {
 		boolean present = driver.findElement(By.cssSelector("a[title='Home Tab']")).isDisplayed();
 		Assert.assertTrue(present);
 	}
+	
+	@Given("I enter {string} username")
+	public void i_enter_username(String username) {
+		driver.findElement(By.id("username")).sendKeys(username);
+	}
+	@Given("I enter {string} password")
+	public void i_enter_password(String password) {
+		driver.findElement(By.id("password")).sendKeys(password);
+	}
+
+
+
 
 }
