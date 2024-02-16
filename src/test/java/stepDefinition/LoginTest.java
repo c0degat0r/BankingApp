@@ -31,8 +31,9 @@ public class LoginTest extends Base {
 	}
 
 	@When("I click the login button")
-	public void i_click_the_login_button() {
+	public void i_click_the_login_button() throws InterruptedException {
 		driver.findElement(By.id("Login")).click();
+		Thread.sleep(9000);
 	}
 
 	@Then("I should see the home page")
