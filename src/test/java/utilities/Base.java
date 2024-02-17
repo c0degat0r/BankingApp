@@ -8,9 +8,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+
 public class Base {
 
-	public WebDriver driver;
+	public static WebDriver driver;
 
 	public void openBrowser() {
 		WebDriverManager.chromedriver().setup();

@@ -11,6 +11,6 @@ Feature: Test Application functionality
   Scenario: Verify Application field
     Then I verify the Application on the home page
     Then I click on new button
-    And I click on the save button
     And I verify the first name field is required field
-    Then I enter some text that id "00NHs00000gWijB" to the field to verify length no more than "20 "
+    Then I enter some text that id "00NHs00000gWijB" to the field to verify length no more than "codegatornumberonegood"
+    And I click on the save button
