@@ -16,7 +16,7 @@ public class Base {
 		WebDriverManager.chromedriver().setup();
 		
 		ChromeOptions option = new ChromeOptions();
-		option.addArguments("--headless");
+		//option.addArguments("--headless");
 		
 		driver = new ChromeDriver(option);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
