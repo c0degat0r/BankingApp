@@ -7,8 +7,8 @@ Feature: Test Application functionality
     And I enter "john@codegator.us" username
     And I enter "Welcome2" password
     When I click the login button
-    Then I should see the home page
 
+  @tag
   Scenario: Test the application Tab
     Given I clicked on Application Tab
     And I clicked on New Tab
@@ -17,20 +17,29 @@ Feature: Test Application functionality
     Then I entered letters to confirm the	required length of 20 characters
     Then I click the save button to confirm the entry
 
+  @tag1
   Scenario: Test the application Tab
-    Given I verified that Middle Name field is present
+    Given I clicked on Application
+    And I clicked on New
+    And I verified that Middle Name field is present
     And I verified that the field is not required by clicking save tab
     And I entered length of 20 characters to confirm the required length
     Then I click save to confirm the entry
 
+  @tag2
   Scenario: Test the application Tab
-    Given I verify that Last Name field is present
+    Given I clicked Application Tab
+    And I clicked New Tab
+    And I verify that Last Name field is present
     And I click save to confirm that this field is mandatory
     Then I enter letters to confirm the	required length of 20 chrachters
     And I click save button to confirm
 
+  @tag3
   Scenario: Test the application Tab
-    Given I verified the dropdown field is present which has "00NHs00000gWil2" id
+    Given I clicked the Application Tab
+    And I clicked the New Tab
+    And I verified the dropdown field is present which has "00NHs00000gWil2" id
     And I clicked save to confirm that this field is required
     And I verified the dropdown options which has "00NHs00000gWil2" id
       | --None-- |
@@ -40,7 +49,7 @@ Feature: Test Application functionality
     And I verified the values are in alphabetical order
     Then I verified the default value is entered as none
 
+  @tag4
   Scenario: Test the application Tab
-    // Given I verified the access as standard user
-    // And I verified that the Application Object tab is visible
-
+    Given I verified the access as standard user
+    And I verified that the Application Object tab is visible

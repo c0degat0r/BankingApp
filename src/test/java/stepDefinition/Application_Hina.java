@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -40,8 +41,16 @@ public class Application_Hina extends Base {
 		 Assert.assertTrue(true);
 	   
 	}
-
-	@Given("I verified that Middle Name field is present")
+	@Given("I clicked on Application")
+	public void i_clicked_on_application() {
+	   driver.findElement(By.className("brandPrimaryFgr")).click();
+	}
+	@Given("I clicked on New")
+	public void i_clicked_on_new() {
+		driver.findElement(By.name("new")).click();	
+	}
+		
+	@And ("I verified that Middle Name field is present")
 	public void i_verified_that_middle_name_field_is_present() {
 		driver.findElement(By.id("00NHs00000gWijG")).isDisplayed();
 	    
@@ -60,8 +69,15 @@ public class Application_Hina extends Base {
 	public void i_click_save_to_confirm_the_entry() {
 	  Assert.assertTrue(true);
 	}
-
-	@Given("I verify that Last Name field is present")
+	@Given("I clicked Application Tab")
+	public void i_clicked_application_tab() {
+	   driver.findElement(By.className("brandPrimaryFgr")).click();
+	}
+	@Given("I clicked New Tab")
+	public void i_clicked_new_tab() {
+		driver.findElement(By.name("new")).click();	
+	}
+	@And("I verify that Last Name field is present")
 	public void i_verify_that_last_name_field_is_present() {
 	  driver.findElement(By.id("00NHs00000gWijL")).isDisplayed();
 	}
@@ -80,8 +96,15 @@ public class Application_Hina extends Base {
 		driver.findElement(By.className("btn")).click(); 
 		 Assert.assertTrue(true);   
 	}
-	
-	@Given("I verified the dropdown field is present which has {string} id")
+	@Given("I clicked the Application Tab")
+	public void i_clicked_the_application_tab() {
+	   driver.findElement(By.className("brandPrimaryFgr")).click();
+	}
+	@Given("I clicked the New Tab")
+	public void i_clicked_the_new_tab() {
+		driver.findElement(By.name("new")).click();	
+}
+	@And ("I verified the dropdown field is present which has {string} id")
 	public void i_verified_the_dropdown_field_is_present_which_has_id(String string) {
 		driver.findElement(By.className("btn")).click(); 
 		Assert.assertTrue(true);
@@ -107,9 +130,10 @@ public class Application_Hina extends Base {
 	   
 	}
 	@Then("I verified the default value is entered as none")
-	public void i_verified_the_default_value_is_entered_as_none(String dropdown) {
-	     driver.findElement(By.linkText("dropdown")).click();
+	public void i_verified_the_default_value_is_entered_as_none() {
+	     driver.findElement(By.id("00NHs00000gWil2")).isSelected();
 	     System.out.println();
+	     
 	   }
 	
 	@Given("I verified the access as standard user")
@@ -123,12 +147,12 @@ public class Application_Hina extends Base {
 	}
 	   
 	
-	//@Given("I verified that the Application Object tab is visible")
-	//public void i_verified_that_the_application_object_tab_is_visible() {
-	   // driver.findElement(By.className("brandPrimaryFgr")).isDisplayed();
+	@Given("I verified that the Application Object tab is visible")
+	public void i_verified_that_the_application_object_tab_is_visible() {
+	   driver.findElement(By.className("brandPrimaryFgr")).isDisplayed();
 	}
 
-
+}
 
 
 
