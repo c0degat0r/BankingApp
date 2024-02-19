@@ -20,7 +20,7 @@ public class Base {
 		//option.addArguments("--headless");
 		
 		driver = new ChromeDriver(option);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 	}
 }
