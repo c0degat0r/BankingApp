@@ -1,6 +1,7 @@
 Feature: Test Application functionality
-  Backgroud:
-  Given I open chrome browser
+
+  Background: 
+    Given I open chrome browser
     And I visit the environment
     And I enter "john@codegator.us" username
     And I enter "Welcome2" password
@@ -9,43 +10,44 @@ Feature: Test Application functionality
     Then I clicked on Application Tab
     And I clicked on New button
 
-  @application 
+  @application @tc1
   Scenario: Test the application Tab
     And I verified that First Name field is present
     And I clicked save to confirm
     Then I eneterd letters to confirm the	required length of 20 chrachters
     Then I click the save button to confirm
 
-  @application 
+  @application @tc2
   Scenario: Test the application Tab
     Given I verified that Middle Name field is present
     And I verified that the field is not required by clicking save button
     And I entered length of sometext to confirm the required length
     Then I click save to comfirm the entry
 
-  @application 
+  @application @tc3
   Scenario: Test the application Tab
     Given I verified that Last Name field is present
     And I clicked save to confirm that this field is madatory
     Then I eneterd letters to confirm the	required length of 20
     Then I click the save button to confirm the required length
 
-  @application 
+  @application @tc4
   Scenario: Test the application Tab
     Given I verified the dropdown field is present
     And I clicked save to confirm that this field is required
-    And I verified the dropdown with these following options
+    And I verified the dropdown which has "00NHs00000gWil2" id with these following options
+      | --None-- |
       | Single   |
       | Married  |
       | Divorced |
-    Then I select "Married" value for the drop down which has "00NHs00000gWil2" id
-    And I verified the values are in alphabetical order with these following option
+    And I verified the values are in alphabetical in order with these following option
+      | --None-- |
       | Divorced |
       | Married  |
       | Single   |
     Then I verified the default value is entered as none
 
-  @application 
+  @application @tc5
   Scenario: Test the application Tab
     Given I verified the access as standard user
     And I visit the environment

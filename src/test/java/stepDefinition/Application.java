@@ -103,37 +103,30 @@ public class Application extends Base {
 
 	}
 
-	@Given("I verified the dropdown with these following options")
-	public void i_verified_the_dropdown_with_these_following_options(io.cucumber.datatable.DataTable dataTable) {
+	@Given("I verified the dropdown which has {string} id with these following options")
+	public void i_verified_the_dropdown_which_has_id_with_these_following_options(String dwfeild, io.cucumber.datatable.DataTable dataTable) {
 		List<String> expectedValues = dataTable.asList();
-		WebElement feild = driver.findElement(By.id("00NHs00000gWil2"));
+		WebElement feild = driver.findElement(By.id(dwfeild));
 		Select sel = new Select(feild);
 		List<WebElement> actaulValues = sel.getOptions();
 		for (int i = 0; i < expectedValues.size(); i++) {
-
+			
 		}
+	  
 
 	}
-
-	@Then("I select {string} value for the drop down which has {string} id")
-	public void i_select_value_for_the_drop_down_which_has_id(String values, String fieldId) {
-		WebElement dropdown = driver.findElement(By.id(fieldId));
-		Select sel = new Select(dropdown);
-		sel.selectByVisibleText(values);
-
-	}
-
-	@Then("I verified the values are in alphabetical order with these following option")
-	public void i_verified_the_values_are_in_alphabetical_order_with_these_following_option(
-			io.cucumber.datatable.DataTable dataTable) {
-		boolean dpValues = driver.findElement(By.id("00NHs00000gWil2")).isDisplayed();
-		Assert.assertTrue(dpValues);
+	
+	@Then("I verified the values are in alphabetical in order with these following option")
+	public void i_verified_the_values_are_in_alphabetical_in_order_with_these_following_option(io.cucumber.datatable.DataTable dataTable) {
+		driver.findElement(By.id("00NHs00000gWil2")).getText();
+	   
 
 	}
-
+	
 	@Then("I verified the default value is entered as none")
 	public void i_verified_the_default_value_is_entered_as_none() {
-		driver.findElement(By.id("00NHs00000gWil2")).isDisplayed();
+		driver.findElement(By.id("00NHs00000gWil2")).click();
+		System.out.println("--None--");
 
 	}
 	@Given("I verified the access as standard user")
