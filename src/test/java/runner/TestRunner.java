@@ -14,8 +14,8 @@ import io.cucumber.junit.CucumberOptions;
 				"pretty",
 				"html:target/cucumber-reports/cucumber.html",
 				"json:target/cucumber-reports/cucumber.json"
-		}
-		)
+		}//,tags= "@login"
+		,tags= "@application")
 
 @RunWith(Cucumber.class)
 public class TestRunner {
