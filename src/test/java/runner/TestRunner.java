@@ -15,7 +15,6 @@ import io.cucumber.junit.CucumberOptions;
 				"html:target/cucumber-reports/cucumber.html",
 				"json:target/cucumber-reports/cucumber.json"
 		}
-		)
 
 @RunWith(Cucumber.class)
 public class TestRunner {
