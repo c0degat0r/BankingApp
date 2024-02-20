@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+        <th>Number</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Sample-Cucumber-TestNG</td>
+        <td>1</td>
+      <td>18 Feb 2024, 21:06</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_click_save_button_to_confirm()</td>
+              <td>1</td>
+              <td class="duration" data-value="348612000">0.348</td>
+              <td class="duration" data-value="348612000">0.348</td>
+              <td class="duration" data-value="348612000">0.348</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_click_save_to_confirm_that_this_field_is_mandatory()</td>
+              <td>1</td>
+              <td class="duration" data-value="374060700">0.374</td>
+              <td class="duration" data-value="374060700">0.374</td>
+              <td class="duration" data-value="374060700">0.374</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_click_save_to_confirm_the_entry()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_click_the_save_button_to_confirm_the_entry()</td>
+              <td>1</td>
+              <td class="duration" data-value="341873200">0.341</td>
+              <td class="duration" data-value="341873200">0.341</td>
+              <td class="duration" data-value="341873200">0.341</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_clicked_application_tab()</td>
+              <td>1</td>
+              <td class="duration" data-value="379937700">0.379</td>
+              <td class="duration" data-value="379937700">0.379</td>
+              <td class="duration" data-value="379937700">0.379</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_clicked_new_tab()</td>
+              <td>1</td>
+              <td class="duration" data-value="389329700">0.389</td>
+              <td class="duration" data-value="389329700">0.389</td>
+              <td class="duration" data-value="389329700">0.389</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_clicked_on_application()</td>
+              <td>1</td>
+              <td class="duration" data-value="415442400">0.415</td>
+              <td class="duration" data-value="415442400">0.415</td>
+              <td class="duration" data-value="415442400">0.415</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_clicked_on_application_tab()</td>
+              <td>1</td>
+              <td class="duration" data-value="466717800">0.466</td>
+              <td class="duration" data-value="466717800">0.466</td>
+              <td class="duration" data-value="466717800">0.466</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_clicked_on_new()</td>
+              <td>1</td>
+              <td class="duration" data-value="361044400">0.361</td>
+              <td class="duration" data-value="361044400">0.361</td>
+              <td class="duration" data-value="361044400">0.361</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_clicked_on_new_tab()</td>
+              <td>1</td>
+              <td class="duration" data-value="372113800">0.372</td>
+              <td class="duration" data-value="372113800">0.372</td>
+              <td class="duration" data-value="372113800">0.372</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_clicked_save_to_confirm_that_this_field_is_mandatory()</td>
+              <td>1</td>
+              <td class="duration" data-value="335404400">0.335</td>
+              <td class="duration" data-value="335404400">0.335</td>
+              <td class="duration" data-value="335404400">0.335</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_clicked_save_to_confirm_that_this_field_is_required()</td>
+              <td>1</td>
+              <td class="duration" data-value="358882900">0.358</td>
+              <td class="duration" data-value="358882900">0.358</td>
+              <td class="duration" data-value="358882900">0.358</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_clicked_the_application_tab()</td>
+              <td>1</td>
+              <td class="duration" data-value="417812300">0.417</td>
+              <td class="duration" data-value="417812300">0.417</td>
+              <td class="duration" data-value="417812300">0.417</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_clicked_the_new_tab()</td>
+              <td>1</td>
+              <td class="duration" data-value="441309800">0.441</td>
+              <td class="duration" data-value="441309800">0.441</td>
+              <td class="duration" data-value="441309800">0.441</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_enter_letters_to_confirm_the_required_length_of_chrachters(java.lang.Integer)</td>
+              <td>1</td>
+              <td class="duration" data-value="147549400">0.147</td>
+              <td class="duration" data-value="147549400">0.147</td>
+              <td class="duration" data-value="147549400">0.147</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_entered_length_of_characters_to_confirm_the_required_length(java.lang.Integer)</td>
+              <td>1</td>
+              <td class="duration" data-value="134625200">0.134</td>
+              <td class="duration" data-value="134625200">0.134</td>
+              <td class="duration" data-value="134625200">0.134</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_entered_letters_to_confirm_the_required_length_of_characters(java.lang.Integer)</td>
+              <td>1</td>
+              <td class="duration" data-value="167893700">0.167</td>
+              <td class="duration" data-value="167893700">0.167</td>
+              <td class="duration" data-value="167893700">0.167</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_verified_that_first_name_field_is_present()</td>
+              <td>1</td>
+              <td class="duration" data-value="86010700">0.086</td>
+              <td class="duration" data-value="86010700">0.086</td>
+              <td class="duration" data-value="86010700">0.086</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_verified_that_middle_name_field_is_present()</td>
+              <td>1</td>
+              <td class="duration" data-value="62536500">0.062</td>
+              <td class="duration" data-value="62536500">0.062</td>
+              <td class="duration" data-value="62536500">0.062</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_verified_that_the_application_object_tab_is_visible()</td>
+              <td>1</td>
+              <td class="duration" data-value="694138900">0.694</td>
+              <td class="duration" data-value="694138900">0.694</td>
+              <td class="duration" data-value="694138900">0.694</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_verified_that_the_field_is_not_required_by_clicking_save_tab()</td>
+              <td>1</td>
+              <td class="duration" data-value="339660100">0.339</td>
+              <td class="duration" data-value="339660100">0.339</td>
+              <td class="duration" data-value="339660100">0.339</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_verified_the_access_as_standard_user()</td>
+              <td>1</td>
+              <td class="duration" data-value="4026863900">4.026</td>
+              <td class="duration" data-value="4026863900">4.026</td>
+              <td class="duration" data-value="4026863900">4.026</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_verified_the_default_value_is_entered_as_none()</td>
+              <td>1</td>
+              <td class="duration" data-value="42552700">0.042</td>
+              <td class="duration" data-value="42552700">0.042</td>
+              <td class="duration" data-value="42552700">0.042</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_verified_the_dropdown_field_is_present_which_has_id(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="453688200">0.453</td>
+              <td class="duration" data-value="453688200">0.453</td>
+              <td class="duration" data-value="453688200">0.453</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_verified_the_dropdown_options_which_has_id(java.lang.String,io.cucumber.datatable.DataTable)</td>
+              <td>1</td>
+              <td class="duration" data-value="170347400">0.170</td>
+              <td class="duration" data-value="170347400">0.170</td>
+              <td class="duration" data-value="170347400">0.170</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_verified_the_values_are_in_alphabetical_order()</td>
+              <td>1</td>
+              <td class="duration" data-value="40009500">0.040</td>
+              <td class="duration" data-value="40009500">0.040</td>
+              <td class="duration" data-value="40009500">0.040</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.Application_Hina.i_verify_that_last_name_field_is_present()</td>
+              <td>1</td>
+              <td class="duration" data-value="64726800">0.064</td>
+              <td class="duration" data-value="64726800">0.064</td>
+              <td class="duration" data-value="64726800">0.064</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.LoginTest.i_click_the_login_button()</td>
+              <td>7</td>
+              <td class="duration" data-value="10176780557">10.176</td>
+              <td class="duration" data-value="10176780557">10.550</td>
+              <td class="duration" data-value="71237463900">1:11.237</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.LoginTest.i_enter_password()</td>
+              <td>1</td>
+              <td class="duration" data-value="1123604300">1.123</td>
+              <td class="duration" data-value="1123604300">1.123</td>
+              <td class="duration" data-value="1123604300">1.123</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.LoginTest.i_enter_password(java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="255607033">0.255</td>
+              <td class="duration" data-value="255607033">0.804</td>
+              <td class="duration" data-value="1533642200">1.533</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.LoginTest.i_enter_username()</td>
+              <td>1</td>
+              <td class="duration" data-value="206077200">0.206</td>
+              <td class="duration" data-value="206077200">0.206</td>
+              <td class="duration" data-value="206077200">0.206</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.LoginTest.i_enter_username(java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="186221900">0.186</td>
+              <td class="duration" data-value="186221900">0.251</td>
+              <td class="duration" data-value="1117331400">1.117</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.LoginTest.i_open_chrome_browser()</td>
+              <td>7</td>
+              <td class="duration" data-value="1627829285">1.627</td>
+              <td class="duration" data-value="1627829285">2.829</td>
+              <td class="duration" data-value="11394805000">11.394</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.LoginTest.i_should_see_the_home_page()</td>
+              <td>2</td>
+              <td class="duration" data-value="53630200">0.053</td>
+              <td class="duration" data-value="53630200">0.054</td>
+              <td class="duration" data-value="107260400">0.107</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinition.LoginTest.i_visit_the_environment()</td>
+              <td>7</td>
+              <td class="duration" data-value="561944928">0.561</td>
+              <td class="duration" data-value="561944928">0.726</td>
+              <td class="duration" data-value="3933614500">3.933</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>35</td>
+            <td>64</td>
+            <td class="duration">1.595</td>
+            <td class="duration">1:11.237</td>
+            <td class="duration">1:42.086</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
