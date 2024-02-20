@@ -17,10 +17,10 @@ public class Base {
 	public void openBrowser() {
 		WebDriverManager.chromedriver().setup();
 		
-		//ChromeOptions option = new ChromeOptions();
-		//option.addArguments("--headless");  //option in chromeDriver below
+		ChromeOptions option = new ChromeOptions();
+		option.addArguments("--headless");  //option in chromeDriver below
 		
-		driver = new ChromeDriver();
+		driver = new ChromeDriver(option);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 	}
