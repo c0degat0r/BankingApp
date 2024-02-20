@@ -22,12 +22,12 @@ public class LoginTest extends Base {
 
 	@Given("I enter username")
 	public void i_enter_username() {
-		driver.findElement(By.id("username")).sendKeys("batch09@codegator.us");
+		driver.findElement(By.id("username")).sendKeys("john@codegator.us");
 	}
 
 	@Given("I enter password")
 	public void i_enter_password() {
-		driver.findElement(By.id("password")).sendKeys("Welcome1");
+		driver.findElement(By.id("password")).sendKeys("Welcome2");
 	}
 
 	@When("I click the login button")

@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+
 public class Base {
 
 	public static WebDriver driver;
@@ -21,7 +22,7 @@ public class Base {
 		option.addArguments("--headless");  //option in chromeDriver below
 		
 		driver = new ChromeDriver(option);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 	}
 }
