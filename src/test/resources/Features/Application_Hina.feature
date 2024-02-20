@@ -19,8 +19,8 @@ Feature: Test Application functionality
 
   @tag1
   Scenario: Test the application Tab
-    Given I clicked on Application
-    And I clicked on New
+    Given I clicked on Application Tab
+    And I clicked on New Tab
     And I verified that Middle Name field is present
     And I verified that the field is not required by clicking save tab
     And I entered length of 20 characters to confirm the required length
@@ -28,8 +28,8 @@ Feature: Test Application functionality
 
   @tag2
   Scenario: Test the application Tab
-    Given I clicked Application Tab
-    And I clicked New Tab
+    Given I clicked on Application Tab
+    And I clicked on New Tab
     And I verify that Last Name field is present
     And I click save to confirm that this field is mandatory
     Then I enter letters to confirm the	required length of 20 chrachters
@@ -37,8 +37,8 @@ Feature: Test Application functionality
 
   @tag3
   Scenario: Test the application Tab
-    Given I clicked the Application Tab
-    And I clicked the New Tab
+    Given I clicked on Application Tab
+    And I clicked on New Tab
     And I verified the dropdown field is present which has "00NHs00000gWil2" id
     And I clicked save to confirm that this field is required
     And I verified the dropdown options which has "00NHs00000gWil2" id
@@ -53,3 +53,32 @@ Feature: Test Application functionality
   Scenario: Test the application Tab
     Given I verified the access as standard user
     And I verified that the Application Object tab is visible
+
+  @tag5
+  Scenario: Add co-signer checkbox
+    Given I clicked on Application Tab
+    And I clicked on New Tab
+    And I verify the Co-signer checkbox is there
+    And I verify that it is unchecked by default
+
+  @tag6
+  Scenario: Add co-signer checkbox
+    Given I clicked on Application Tab
+    And I clicked on New Tab
+    And I verify that the Loan will be used for field is present
+    And I verify the dropdown options which has "00NHs00000gYC9d" id
+      | --None--                        |
+      | Business Launch                 |
+      | Home Improvement / House Buying |
+      | Other                           |
+      | Education                       |
+      | Investment                      |
+    And I verified that the values are displayed in the order above
+
+  @tag7
+  Scenario: Add Loan Amount field to the Application object
+    Given I clicked on Application Tab
+    And I clicked on New Tab
+		And I verified that the field is currency field only
+		And it is accepting decimal value also
+		
