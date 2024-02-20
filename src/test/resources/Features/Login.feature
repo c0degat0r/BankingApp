@@ -1,5 +1,6 @@
 Feature: Test Login functionality
   I want to use this feature file to test the login functionality
+  
 
   Scenario: Test using valid credentials
     Given I open chrome browser
