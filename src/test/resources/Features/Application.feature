@@ -12,9 +12,7 @@ Feature: Test Application functionality
 
   @application @tc1
   Scenario: Test the application Tab
-    And I verified that First Name field is present
-    And I clicked save to confirm
-    Then I eneterd letters to confirm the	required length of 20 chrachters
+    Then I eneterd some letters to confirm the	required length of 20 chrachters by leng
     Then I click the save button to confirm
 
   @application @tc2
@@ -55,3 +53,28 @@ Feature: Test Application functionality
     And I enter password
     When I click the login button
     And I verified that the Application Object tab is visible
+
+  @application @tc6
+  Scenario: add loan fiel to the application
+    Given I verified if is application tab present then click on New button
+    And I verified the Co-signer checkbox is present
+    Then I verified the checkbox should have a default value of un-clecked
+
+  @application @tc7
+  Scenario: add loan loan to the application
+    Given I verified the Loan Amount field should be added to the "Application" object
+    And The field should be a currency field
+    Then The field should accept decimal values
+    And I should be able to input decimal values with appropriate precision
+    Then The loan amount should be saved along with the application data
+
+  @application @tc8
+  Scenario: Test the application Tab
+    Given I verified the dropdown field is present
+    And The drop down field should have the following options in the specified order
+      | --None--                      |
+      | Business Launch               |
+      | Home Improvement/House Buying |
+      | Other                         |
+    Then I should able to select one of the options from the drop down field
+    And The selected purpose should be saved along with the application data
