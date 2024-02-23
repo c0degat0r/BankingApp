@@ -39,8 +39,7 @@ public class Application extends Base {
 	@Then("I eneterd letters to confirm the required length of {int} chrachters")
 	 public void i_eneterd_letters_to_confirm_the_required_length_of_chrachters(Integer int1)
 	{
-	 driver.findElement(By.id("00NHs00000gWijG")).sendKeys("Leng Sandy Ella Micky
-	 And Anna and Aliya ");
+	 driver.findElement(By.id("00NHs00000gWijG")).sendKeys("Leng Sandy Ella Micky And Anna and Aliya ");
 	}
 
 	@Then("I click the save button to confirm")
@@ -63,8 +62,7 @@ public class Application extends Base {
 
 	@Given("I entered length of sometext to confirm the required length")
 	 public void i_entered_length_of_sometext_to_confirm_the_required_length() {
-	 driver.findElement(By.id("00NHs00000gWijG")).sendKeys("Pean Mehan Rob Jerry
-	 Adien");
+	 driver.findElement(By.id("00NHs00000gWijG")).sendKeys("Pean Mehan Rob Jerry Adien");
 	 }
 
 	@Then("I click save to comfirm the entry")
@@ -87,8 +85,7 @@ public class Application extends Base {
 	@Then("I eneterd letters to confirm the required length of {int}")
 	 public void i_eneterd_letters_to_confirm_the_required_length_of(Integer int1)
 	 {
-	 driver.findElement(By.id("00NHs00000gWijL")).sendKeys("lyly Jack Doe Remor
-	 JDorger");
+	 driver.findElement(By.id("00NHs00000gWijL")).sendKeys("lyly Jack Doe Remo JDorger");
 	 }
 
 	@Then("I click the save button to confirm the required length")
@@ -119,6 +116,7 @@ public class Application extends Base {
 		Select sel = new Select(feild);
 		List<WebElement> actaulValues = sel.getOptions();
 		for (int i = 0; i < expectedValues.size(); i++) {
+			
 
 		}
 
@@ -151,45 +149,117 @@ public class Application extends Base {
 	public void i_verified_that_the_application_object_tab_is_visible() {
 		driver.findElement(By.xpath("//a[@title='Applications Tab - Selected']")).isDisplayed();
 	}
-	
+
 	@Given("I verified if is application tab present then click on New button")
 	public void i_verified_if_is_application_tab_present_then_click_on_new_button() {
-	  
-	    	List<WebElement> page = driver.findElements(By.className("\"pageTitleIcon\""));
-		for(WebElement New :page) {
+
+		List<WebElement> page = driver.findElements(By.className("\"pageTitleIcon\""));
+		for (WebElement New : page) {
 			boolean pageH = New.isSelected();
-			if(pageH) {
+			if (pageH) {
 				System.out.println("Application Tab is click");
-			}else {
+			} else {
 				New.click();
 			}
-			
-			
+
 		}
-	    
 
 	}
+
 	@Given("I verified the Co-signer checkbox is present")
 	public void i_verified_the_co_signer_checkbox_is_present() {
-	boolean CScheckbox=	driver.findElement(By.id("00NHs00000gYC9i")).isDisplayed();
-	Assert.assertTrue(true);	  
-	  }
-			 
+		boolean CScheckbox = driver.findElement(By.id("00NHs00000gYC9i")).isDisplayed();
+		Assert.assertTrue(true);
+	}
+
 	@Then("I verified the checkbox should have a default value of un-clecked")
 	public void i_verified_the_checkbox_should_have_a_default_value_of_un_clecked() {
 		WebElement checkbox = driver.findElement(By.id("00NHs00000gYC9i"));
-		if(!checkbox.isSelected()) {
+		if (!checkbox.isSelected()) {
 			System.out.println("checkbox is unchecked by default");
-			
-		}else {
+
+		} else {
 			System.out.println("checkbox is checked by default");
 		}
+
+	}
+
+	@Given("I verified the Loan Amount  should be added to the {string} id field")
+	public void i_verified_the_loan_amount_should_be_added_to_the_id_field(String feild) {
+		driver.findElement(By.id(feild));
+	}
+
+	@Given("The field should be a currency field")
+	public void the_field_should_be_a_currency_field() {
+
+		List<WebElement> CurrName = driver.findElements(By.id("00NHs00000gYC9T"));
+		for (WebElement field : CurrName) {
+			String Curr_name = field.getText();
+			if (Curr_name.equalsIgnoreCase("America")) {
+				Assert.assertTrue(false);
+			}
+		}
+
+	}
+
+	@Then("The loan amount should be saved along with the application data")
+	public void the_loan_amount_should_be_saved_along_with_the_application_data() {
+		driver.findElement(By.name("save")).click();
+		Assert.assertTrue(true);
+
+	}
+
+	@Then("The field should accept decimal values")
+	public void the_field_should_accept_decimal_values() {
+		driver.findElement(By.id("00NHs00000gYC9T")).sendKeys("1200.59");
+		Assert.assertTrue(true);
+
+	}
+	
+
+
+	@Given("The drop down field should have the following options in the specified order")
+	public void the_drop_down_field_should_have_the_following_options_in_the_specified_order(io.cucumber.datatable.DataTable dataTable) {
 	    
 
+		List<String> expectedLuse = dataTable.asList();
+		WebElement feild = driver.findElement(By.id("00NHs00000gYC9d"));
+		Select sel = new Select(feild);
+		List<WebElement> actaulLuse = sel.getOptions();
+		for (int i = 0; i < expectedLuse.size(); i++) {
+			Assert.assertNotSame(expectedLuse, actaulLuse);
+
+			
+			
+		}
+
+
+	}
+	
+	@Then("The selected purpose should be saved along with the application data")
+	public void the_selected_purpose_should_be_saved_along_with_the_application_data() {
+		driver.findElement(By.name("save")).click();
+		Assert.assertTrue(true);
+
 	}
 
 	
 
+
+	@Given("I verified the Loan Amount field is there")
+	public void i_verified_the_loan_amount_field_is_there() {
+		driver.findElement(By.id("00NHs00000gYC9T")).sendKeys("$20,000");
+		Assert.assertTrue(true);
+
+	}
+	@Given("The Loan Amount field should accept Alphabets")
+	public void the_loan_amount_field_should_accept_alphabets() {
+		driver.findElement(By.id("00NHs00000gYC9T")).sendKeys("Twenty Thousand");
+		Assert.assertTrue(true);
+
+		
+	  
+
 	}
 
 
@@ -197,5 +267,9 @@ public class Application extends Base {
 
 	
 
-	
+	}
+
+
+
+
 

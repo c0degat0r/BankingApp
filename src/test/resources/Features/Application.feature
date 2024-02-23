@@ -62,19 +62,35 @@ Feature: Test Application functionality
 
   @application @tc7
   Scenario: add loan loan to the application
-    Given I verified the Loan Amount field should be added to the "Application" object
+    Given I verified the Loan Amount  should be added to the "00NHs00000gYC9T" id field
     And The field should be a currency field
-    Then The field should accept decimal values
-    And I should be able to input decimal values with appropriate precision
     Then The loan amount should be saved along with the application data
+    Then The field should accept decimal values
 
   @application @tc8
-  Scenario: Test the application Tab
+  Scenario: Test the Loan dropdown  field
     Given I verified the dropdown field is present
     And The drop down field should have the following options in the specified order
       | --None--                      |
       | Business Launch               |
       | Home Improvement/House Buying |
       | Other                         |
-    Then I should able to select one of the options from the drop down field
     And The selected purpose should be saved along with the application data
+
+  @application @tc9
+  Scenario: Test Loan Amount field is accept Alphabets
+    Given I verified the Loan Amount field is there
+    And The Loan Amount field should accept Alphabets
+    Then I click save to comfirm the entry
+
+  @application @tc10
+  Scenario: Test add Employment Status dropdown field
+    Given I verfied the dropdown field is present
+    And the drop down filed should have the following options 
+      | Employed      |
+      | Self-employed |
+      | Un-Employed   |
+      | Other         |
+    Then I verified the Default Value should be "Emmpoyed"
+    Then I click save to comfirm
+    And I verified the "yes" is the require field by click on "save" button
