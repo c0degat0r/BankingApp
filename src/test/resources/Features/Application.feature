@@ -55,3 +55,26 @@ Feature: Test Application functionality
     And I enter password
     When I click the login button
     And I verified that the Application Object tab is visible
+
+  @application @tc6
+  Scenario: Test loan amount field in  the application tab
+    Given I verified the loan amount filed is present
+    And I enter "nchcsffvfv" to check if it accpets alphabetic values
+    And I clicked save to confirm
+    And I enter "2399.99 " in the loan amount filed
+    And I clicked save to confirm
+
+  @application @tc7
+  Scenario: Test the co-signer checkbox to the application object
+    Given I verify the co-singer checkbox is present
+    And I verify default value is uncheckd
+  @application @tc8
+  Scenario: Test the loan drop down field to the application object
+    Given I verify the loan drop down filed is present
+    And I verify that the loan drop down which has "00NHs00000gYC9d"  is has the following options
+      | --None--                        |
+      | Business Launch                 |
+      | Home Improvement / House Buying |
+      | Other                           |
+      | Education                       |
+      | Investment                      |

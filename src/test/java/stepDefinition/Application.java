@@ -142,6 +142,87 @@ public class Application extends Base {
 	public void i_verified_that_the_application_object_tab_is_visible() {
 		driver.findElement(By.xpath("//a[@title='Applications Tab - Selected']")).isDisplayed();
 	}
+
+
+	@Given("I verified the loan amount filed is present")
+	public void i_verified_the_loan_amount_filed_is_present() {
+	    driver.findElement(By.id("00NHs00000gYC9T")).isDisplayed();		
+	
+	}
+
+
+	@Given("I enter {string} to check if it accpets alphabetic values")
+	public void i_enter_to_check_if_it_accpets_alphabetic_values(String alpha) {
+	 driver.findElement(By.id("00NHs00000gYC9T")).sendKeys(alpha);
+	}
+	@Given("I enter {string} in the loan amount filed")
+	public void i_enter_in_the_loan_amount_filed(String numeric) {
+		driver.findElement(By.id("00NHs00000gYC9T")).clear();
+		driver.findElement(By.id("00NHs00000gYC9T")).sendKeys(numeric);
+		
+	}
+
+	@Given("I verify the co-singer checkbox is present")
+	public void i_verify_the_co_singer_checkbox_is_present() {
+	    driver.findElement(By.cssSelector("input[type='checkbox']")).isDisplayed();
+	}
+	@Given("I verify default value is uncheckd")
+	public void i_verify_default_value_is_uncheckd() {
+	boolean checkbox =  driver.findElement(By.cssSelector("input[type='checkbox']")).isSelected();
+	
+	
+	Assert.assertFalse(checkbox); 
+	    
+	}
+
+
+	@Given("I verify the loan drop down filed is present")
+	public void i_verify_the_loan_drop_down_filed_is_present() {
+	 boolean drp =driver.findElement(By.id("00NHs00000gYC9d")).isDisplayed();
+	 Assert.assertTrue(drp);
+	}
+	@Given("I verify that the loan drop down which has {string}  is has the following options")
+	public void i_verify_that_the_loan_drop_down_which_has_is_has_the_following_options(String loandropdown, io.cucumber.datatable.DataTable dataTable) {
+		List<String> expectedValues = dataTable.asList();
+		WebElement feild = driver.findElement(By.id(loandropdown));
+		Select sel = new Select(feild);
+		List<WebElement> actaulValues = sel.getOptions();
+		for (int i = 0; i < expectedValues.size(); i++) {
+			
+		}
+		
+		
+		
+	}
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
 	   
 
