@@ -25,9 +25,21 @@ public class Application extends Base {
 		driver.findElement(By.name("new")).click();
 	}
 
-	@And("I verified that First Name field is present")
+	@Then("I verified that First Name field is present")
 	public void i_verified_that_first_name_field_is_present() {
 		driver.findElement(By.id("00NHs00000gWijB"));
+	}
+
+	@Then("I click save to confirm")
+	public void i_click_save_to_confirm() {
+		driver.findElement(By.name("save")).click();
+
+	}
+
+	@Then("I eneterd some letters to confirm the	required length of {int} chrachters")
+	public void i_eneterd_some_letters_to_confirm_the_required_length_of_chrachters(Integer int1) {
+		driver.findElement(By.id("00NHs00000gWijG")).sendKeys("Leng Sandy Ella Micky And Anna and Aliya ");
+
 	}
 
 	@Given("I clicked save to confirm")
@@ -37,9 +49,8 @@ public class Application extends Base {
 	}
 
 	@Then("I eneterd letters to confirm the required length of {int} chrachters")
-	 public void i_eneterd_letters_to_confirm_the_required_length_of_chrachters(Integer int1)
-	{
-	 driver.findElement(By.id("00NHs00000gWijG")).sendKeys("Leng Sandy Ella Micky And Anna and Aliya ");
+	public void i_eneterd_letters_to_confirm_the_required_length_of_chrachters(Integer int1) {
+		driver.findElement(By.id("00NHs00000gWijG")).sendKeys("Leng Sandy Ella Micky And Anna and Aliya ");
 	}
 
 	@Then("I click the save button to confirm")
@@ -61,9 +72,9 @@ public class Application extends Base {
 	}
 
 	@Given("I entered length of sometext to confirm the required length")
-	 public void i_entered_length_of_sometext_to_confirm_the_required_length() {
-	 driver.findElement(By.id("00NHs00000gWijG")).sendKeys("Pean Mehan Rob Jerry Adien");
-	 }
+	public void i_entered_length_of_sometext_to_confirm_the_required_length() {
+		driver.findElement(By.id("00NHs00000gWijG")).sendKeys("Pean Mehan Rob Jerry Adien");
+	}
 
 	@Then("I click save to comfirm the entry")
 	public void i_click_save_to_comfirm_the_entry() {
@@ -82,11 +93,10 @@ public class Application extends Base {
 		Assert.assertTrue(true);
 	}
 
-	@Then("I eneterd letters to confirm the required length of {int}")
-	 public void i_eneterd_letters_to_confirm_the_required_length_of(Integer int1)
-	 {
-	 driver.findElement(By.id("00NHs00000gWijL")).sendKeys("lyly Jack Doe Remo JDorger");
-	 }
+	@Then("I eneterd letters to confirm the	required length of {int}")
+	public void i_eneterd_letters_to_confirm_the_required_length_of(Integer int1) {
+		driver.findElement(By.id("00NHs00000gWijL")).sendKeys("lyly Jack Doe Remo JDorger");
+	}
 
 	@Then("I click the save button to confirm the required length")
 	public void i_click_the_save_button_to_confirm_the_required_length() {
@@ -116,7 +126,6 @@ public class Application extends Base {
 		Select sel = new Select(feild);
 		List<WebElement> actaulValues = sel.getOptions();
 		for (int i = 0; i < expectedValues.size(); i++) {
-			
 
 		}
 
@@ -183,10 +192,13 @@ public class Application extends Base {
 		}
 
 	}
+	
 
-	@Given("I verified the Loan Amount  should be added to the {string} id field")
-	public void i_verified_the_loan_amount_should_be_added_to_the_id_field(String feild) {
-		driver.findElement(By.id(feild));
+
+	@Given("I verified the Loan Amount  should be added to the {string} id fiel")
+	public void i_verified_the_loan_amount_should_be_added_to_the_id_fiel(String feild) {
+	   driver.findElement(By.id(feild));
+
 	}
 
 	@Given("The field should be a currency field")
@@ -206,7 +218,6 @@ public class Application extends Base {
 	public void the_loan_amount_should_be_saved_along_with_the_application_data() {
 		driver.findElement(By.name("save")).click();
 		Assert.assertTrue(true);
-
 	}
 
 	@Then("The field should accept decimal values")
@@ -215,57 +226,111 @@ public class Application extends Base {
 		Assert.assertTrue(true);
 
 	}
-	
-
 
 	@Given("The drop down field should have the following options in the specified order")
-	public void the_drop_down_field_should_have_the_following_options_in_the_specified_order(io.cucumber.datatable.DataTable dataTable) {
-	    
-
+	public void the_drop_down_field_should_have_the_following_options_in_the_specified_order(
+			io.cucumber.datatable.DataTable dataTable) {
 		List<String> expectedLuse = dataTable.asList();
 		WebElement feild = driver.findElement(By.id("00NHs00000gYC9d"));
 		Select sel = new Select(feild);
 		List<WebElement> actaulLuse = sel.getOptions();
 		for (int i = 0; i < expectedLuse.size(); i++) {
 			Assert.assertNotSame(expectedLuse, actaulLuse);
-
-			
-			
 		}
 
+	}
+
+	@Then("The selected purpose should be saved along with the application data")
+	public void the_selected_purpose_should_be_saved_along_with_the_application_data() {
+		driver.findElement(By.name("save")).click();
+
+	}
+
+	@Given("I verified the Loan Amount field is there")
+	public void i_verified_the_loan_amount_field_is_there() {
+		boolean leanField = driver.findElement(By.id("00NHs00000gYC9T")).isDisplayed();
+		Assert.assertTrue(leanField);
+
+	}
+
+	@Given("The Loan Amount field should accept Alphabets")
+	public void the_loan_amount_field_should_accept_alphabets() {
+		driver.findElement(By.id("00NHs00000gYC9T")).sendKeys("Twenty Thousand");
+		
 
 	}
 	
-	@Then("The selected purpose should be saved along with the application data")
-	public void the_selected_purpose_should_be_saved_along_with_the_application_data() {
+	@Given("I verfied the dropdown field is present")
+	public void i_verfied_the_dropdown_field_is_present() {
+	   boolean pre = driver.findElement(By.id("00NHs00000hqWgA")).isDisplayed();
+	   Assert.assertTrue(pre);
+
+	}
+	@Given("the drop down filed should have the following options")
+	public void the_drop_down_filed_should_have_the_following_options(io.cucumber.datatable.DataTable dataTable) {
+		List<String> expectedCriteria = dataTable.asList();
+		WebElement EmpStatus = driver.findElement(By.id("00NHs00000hqWgA"));
+		Select sel = new Select(EmpStatus);
+		List<WebElement> actaulCriteria = sel.getOptions();
+		for (int i = 0; i < expectedCriteria.size(); i++) {
+			Assert.assertNotSame(expectedCriteria, actaulCriteria);
+		}
+	   
+
+	}
+	@Then("I verified the Default Value should be {string}")
+	public void i_verified_the_default_value_should_be(String string) {
+		WebElement Employed = driver.findElement(By.id("00NHs00000gYC9i"));
+		if (!Employed.isSelected()) {
+			System.out.println("Employed is Select  by default");
+
+		} else {
+			System.out.println("Employed is not a default value");
+		}
+
+	}
+		
+	@Then("I verified the {string} is the require field by click on {string} button")
+	public void i_verified_the_is_the_require_field_by_click_on_button(String string, String string2) {
 		driver.findElement(By.name("save")).click();
 		Assert.assertTrue(true);
 
 	}
+	
 
+	@Given("I verfied the Status Type field is present")
+	public void i_verfied_the_status_type_field_is_present() {
+		Boolean StatusType = driver.findElement(By.id("00NHs00000hqWg5")).isDisplayed();
+		Assert.assertTrue(StatusType);
+
+	}
+	@Given("The Status Type drop down field should have these following options")
+	public void the_status_type_drop_down_field_should_have_these_following_options(io.cucumber.datatable.DataTable dataTable) {
+		List<String> expectedValues = dataTable.asList();
+		WebElement StatusType = driver.findElement(By.id("00NHs00000hqWg5"));
+		Select sel = new Select(StatusType);
+		List<WebElement> actaulValues = sel.getOptions();
+		for (int i = 0; i < expectedValues.size(); i++) {
+
+		}
+	}
+	
+	
 	
 
 
-	@Given("I verified the Loan Amount field is there")
-	public void i_verified_the_loan_amount_field_is_there() {
-		driver.findElement(By.id("00NHs00000gYC9T")).sendKeys("$20,000");
-		Assert.assertTrue(true);
+	@Then("The {string} value is the Default Value")
+	public void the_value_is_the_default_value(String string) {
+	   	WebElement Dvalue = driver.findElement(By.id("00NHs00000hqWg5"));
+		if (!Dvalue.isSelected()) {
+			System.out.println("In-Process");
 
-	}
-	@Given("The Loan Amount field should accept Alphabets")
-	public void the_loan_amount_field_should_accept_alphabets() {
-		driver.findElement(By.id("00NHs00000gYC9T")).sendKeys("Twenty Thousand");
-		Assert.assertTrue(true);
+		} else {
+			System.out.println("other value");
+		}
 
 		
-	  
-
-	}
-
-
-
-
-	
+	    
 
 	}
 
@@ -273,3 +338,5 @@ public class Application extends Base {
 
 
 
+
+}
