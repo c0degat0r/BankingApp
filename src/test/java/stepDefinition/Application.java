@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import utilities.Base;
 
 public class Application extends Base {
@@ -314,11 +315,6 @@ public class Application extends Base {
 
 		}
 	}
-	
-	
-	
-
-
 	@Then("The {string} value is the Default Value")
 	public void the_value_is_the_default_value(String string) {
 	   	WebElement Dvalue = driver.findElement(By.id("00NHs00000hqWg5"));
@@ -328,9 +324,179 @@ public class Application extends Base {
 		} else {
 			System.out.println("other value");
 		}
+	}
+	@Given("I verfied the field that has {string} id is present")
+	public void i_verfied_the_field_that_has_id_is_present(String string) {
+	   boolean pre =  driver.findElement(By.id(string)).isDisplayed();
+	   Assert.assertTrue(pre);
 
-		
+	
+	}
+	@Then("The drop down field should have these follwing options")
+	public void the_drop_down_field_should_have_these_follwing_options(io.cucumber.datatable.DataTable dataTable) {
+		List<String> expectedValues = dataTable.asList();
+		WebElement Dfield = driver.findElement(By.id("00NHs00000ht2ko"));
+		Select sel = new Select(Dfield);
+		List<WebElement> actaulValues = sel.getOptions();
+		for (int i = 0; i < expectedValues.size(); i++) {
+			
+		}
+
+	}
+	@Then("I verified {string} is the default value")
+	public void i_verified_is_the_default_value(String string) {
+		WebElement None = driver.findElement(By.id("00NHs00000ht2ko"));
+		if (!None.isSelected()) {
+			System.out.println("--None--");
+
+		} else {
+			System.out.println("other value");
+		}
+
+	}
+	@Then("I verified is a Required field by clicking save button")
+	public void i_verified_is_a_required_field_by_clicking_save_button() {
+		driver.findElement(By.name("save")).click();
+		Assert.assertTrue(true);
+
 	    
+
+	}
+	@Then("I verified the values are in alphabatically in order by following option")
+	public void i_verified_the_values_are_in_alphabatically_in_order_by_following_option(io.cucumber.datatable.DataTable dataTable) {
+	    driver.findElement(By.id("00NHs00000ht2ko")).getText();
+
+	}
+	
+
+	@Given("I verified the drop down field that has {string} id is there")
+	public void i_verified_the_drop_down_field_that_has_id_is_there(String string) {
+		 boolean pre = driver.findElement(By.id(string)).isDisplayed();
+		   Assert.assertTrue(pre);
+	    
+
+	}
+	
+
+	@Then("I click save button to verified that is a required field")
+	public void i_click_save_button_to_verified_that_is_a_required_field() {
+		driver.findElement(By.name("save")).click();
+		Assert.assertTrue(true);
+
+	}
+
+	@Then("I verified the values are in order by following option")
+	public void i_verified_the_values_are_in_order_by_following_option(io.cucumber.datatable.DataTable dataTable) {
+		List<String> expectedValues = dataTable.asList();
+		WebElement ASfield = driver.findElement(By.id("00NHs00000ht3C4"));
+		Select sel = new Select(ASfield);
+		List<WebElement> actaulValues = sel.getOptions();
+		for (int i = 0; i < expectedValues.size(); i++) {
+			
+		}
+
+	}
+	@Then("I verified default value is {string}")
+	public void i_verified_default_value_is(String string) {
+		WebElement None = driver.findElement(By.id("00NHs00000ht3C4"));
+		if (!None.isSelected()) {
+			System.out.println("--None--");
+
+		} else {
+			System.out.println("other value");
+		}
+	}
+	@Then("I verfied the values are in alphabatically in order by following optin")
+	public void i_verfied_the_values_are_in_alphabatically_in_order_by_following_optin(io.cucumber.datatable.DataTable dataTable) {
+	    driver.findElement(By.id("00NHs00000ht3C4")).getText();
+	}
+
+		@Given("I verified the field that has name {string} is present")
+		public void i_verified_the_field_that_has_name_is_present(String Annual) {
+		    driver.findElement(By.id(Annual)).isDisplayed();
+
+		}
+
+	
+	@Then("I verified is a required field by clicking {string} button")
+	public void i_verified_is_a_required_field_by_clicking_button(String string) {
+		driver.findElement(By.name("save")).click();
+		Assert.assertTrue(true);
+	}
+	@Then("It should take length {int} max amount and {int} decimals")
+	public void it_should_take_length_max_amount_and_decimals(Integer int1, Integer int2) {
+	   driver.findElement(By.id("00NHs00000ht3C9")).sendKeys("950000.23");
+	}
+	@Given("I verified the field that has id {string} is present")
+	public void i_verified_the_field_that_has_id_is_present(String Phone) {
+	    driver.findElement(By.id(Phone)).isDisplayed();
+
+	}
+	@Then("I verified it is a required field by click save button")
+	public void i_verified_it_is_a_required_field_by_click_save_button() {	
+		driver.findElement(By.name("save")).click();
+		Assert.assertTrue(true);
+	}
+	
+	@Then("I enter some numbers to verified it able to take the text")
+	public void i_enter_some_numbers_to_verified_it_able_to_take_the_text() {
+	   driver.findElement(By.id("00NHs00000ht3CE")).sendKeys("7038889733");
+
+	}
+	@Given("I verified the field has Id  {string} is present")
+	public void i_verified_the_field_has_id_is_present(String Email) {
+	    driver.findElement(By.id(Email)).isDisplayed();
+
+	}
+	@Then("I click  save to verify is a required field")
+	public void i_click_save_to_verify_is_a_required_field() {
+		driver.findElement(By.name("save")).click();
+		Assert.assertTrue(true);
+
+	}
+	@Then("I enter some text to verified it is able to appear")
+	public void i_enter_some_text_to_verified_it_is_able_to_appear() {
+	   driver.findElement(By.id("00NHs00000ht3CJ")).sendKeys("ella3344@gmail.com");
+
+	}
+
+	@Given("I verified the field is that has id {string} is there")
+	public void i_verified_the_field_is_that_has_id_is_there(String string) {
+	    driver.findElement(By.id("datePicker")).isDisplayed();
+	    
+
+	}
+	@Then("I verified it is a required field")
+	public void i_verified_it_is_a_required_field() {
+		driver.findElement(By.name("save")).click();
+		Assert.assertTrue(true);
+
+	}
+	@Then("I verified It should not accept future date by enter some future date")
+	public void i_verified_it_should_not_accept_future_date_by_enter_some_future_date() {
+		enterDate("00NHs00000ht3CO","March","2025","20");
+		driver.findElement(By.name("save")).click();
+		Assert.assertFalse(false);
+				
+	}
+	
+
+	@Given("I verified the field present on the application page")
+	public void i_verified_the_field_present_on_the_application_page() {
+	   driver.findElement(By.id("00NHs00000ht3CT")).isDisplayed();
+
+	}
+	@Then("It should be Encrypted field:***_**_{int}")
+	public void it_should_be_encrypted_field(Integer int1) {
+	    driver.findElement(By.id("00NHs00000ht3CT")).sendKeys("234679899");
+	    driver.findElement(By.name("save")).click();
+		Assert.assertFalse(true);
+
+	}
+	@Then("I verified it a required field by click on save button")
+	public void i_verified_it_a_required_field_by_click_on_save_button() {
+		driver.findElement(By.name("save")).click();
+		Assert.assertFalse(true);
 
 	}
 
@@ -339,4 +505,71 @@ public class Application extends Base {
 
 
 
-}
+	}
+
+
+
+
+
+	
+
+
+	
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+	   
+
+	
+
+
+
+
+
+
+
+	
+	
+
+	    
+
+	
+
+
+
+
+		
+	    
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
