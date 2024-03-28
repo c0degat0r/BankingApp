@@ -12,6 +12,7 @@ Feature: Test Application functionality
 
   @application @tc1
   Scenario: Test the application Tab
+    And I enter the Application name in the field that has"Name" id
     And I verified that First Name field is present
     And I clicked save to confirm
     Then I eneterd some letters to confirm the	required length of 20 chrachters
@@ -63,7 +64,7 @@ Feature: Test Application functionality
     Then I verified the checkbox should have a default value of un-clecked
 
   @application @tc7
-  Scenario: add loan loan to the application
+  Scenario: add loan Amount to the application
     Given I verified the Loan Amount  should be added to the "00NHs00000gYC9T" id fiel
     And The field should be a currency field
     Then The loan amount should be saved along with the application data
@@ -131,7 +132,7 @@ Feature: Test Application functionality
       | Un-employed     |
 
   @application @tc13
-  Scenario: Test Application Statua drop down field
+  Scenario: Test Application Status drop down field
     Given I verified the drop down field that has "00NHs00000ht3C4" id is there
     Then I click save button to verified that is a required field
     And I verified the values are in order by following option
@@ -169,10 +170,21 @@ Feature: Test Application functionality
     Given I verified the field is that has id "00NHs00000ht3CO" is there
     Then I verified it is a required field
     And I verified It should not accept future date by enter some future date
-   
 
   @application @tc18
   Scenario: Test SSN field
     Given I verified the field present on the application page
-    Then It should be Encrypted field:***_**_4656
+    Then I enter the Application name in the field that has"Name" id
+    Then I enter first name that has id "00NHs00000gWijB"
+    And I enter last name with id "00NHs00000gWijL"
+    Then I select a values in Marital status drop down field
+    Then I select a values in stauts field "00NHs00000hqWg5" id
+    And I select a values in Employment Status field
+    And I select a values in Employment Category field
+    Then I select a values in Appicaton Status field
+    Then I enter some number in Annual Income field
+    And I enter a email
+    And I enter a phone number
+    Then I enter date of birth 
+    Then It should be Encrypted field
     And I verified it a required field by click on save button

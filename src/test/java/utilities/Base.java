@@ -46,10 +46,17 @@ public class Base {
 		String date = day.getText();
 		if (date.equalsIgnoreCase(dateValue)) {
 			day.click();
+		}else{ 
 			break;
-}
+		}
+
 	}
-	driver.quit();
+	}
+		
+
 	
-	}
-}
+	
+	
+		}
+	
+
